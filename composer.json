@@ -1,0 +1,40 @@
+{
+  "name": "solucaointernet/cadsus-client",
+  "description": "Cliente privado para autenticação e consultas CADSUS/CNS-PDQ.",
+  "type": "library",
+  "license": "proprietary",
+  "require": {
+    "php": "^8.2",
+    "ext-dom": "*",
+    "ext-json": "*",
+    "ext-libxml": "*",
+    "ext-openssl": "*",
+    "ext-soap": "*",
+    "guzzlehttp/guzzle": "^7.8",
+    "psr/log": "^2.0 || ^3.0",
+    "psr/simple-cache": "^2.0 || ^3.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^11.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "SolucaoInternet\\Cadsus\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "SolucaoInternet\\Cadsus\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test": "phpunit",
+    "test:contract": "phpunit --testsuite contract",
+    "contract:manifest": "@php tools/generate-contract-manifest.php"
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}
